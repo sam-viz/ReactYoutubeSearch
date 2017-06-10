@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import YASearch from 'youtube-api-search';
+import _ from 'lodash';
 
 import SearchDeOuf from './components/searchBar';
 import VideoFeed from './components/videoFeed';
 import VideoPlayer from './components/videoPlayer';
-
-
-// Used in case of needing some sort of testing.
-//import Friend from './components/test';
 
 
 const YOUTUBE_API_KEY= 'AIzaSyAyBpBebHDM8BbJLN5Sn6flZ0t9Hj8XvTw';
@@ -23,9 +20,10 @@ class App extends React.Component {
 
   }
   render() {
+    const debouncedKeywordPressed=_.debounce((kw) => {this.handleKeywordPressed(kw)},200);
   	return (
   		<div className="container">
-      		<SearchDeOuf onButtonClicked={this.handleKeywordPressed.bind(this)}/>
+      		<SearchDeOuf onButtonClicked={debouncedKeywordPressed}/>
           <div className="row">
           <VideoPlayer video= {this.state.selectedVideo} />
       		<VideoFeed videos={this.state.videos} onSelectedVideo={(video) => { this.setState({selectedVideo: video}); }} />

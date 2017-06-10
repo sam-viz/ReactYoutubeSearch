@@ -5,7 +5,7 @@ import VideoThumbnail from './videoThumbnail';
 
 const VideoFeed= (props) => {
    var videoReceivedItems= props.videos.map( (element,index) => {
-   	  return <VideoThumbnail onSelectedVideo={props.onSelectedVideo} isLastElement={index===props.videos.length-1 ? true:false} video={element} key={element.etag}/>;
+   	  return <VideoThumbnail onSelectedVideo={props.onSelectedVideo} video={element} key={element.etag}/>;
    });
 
    return (
