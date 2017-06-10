@@ -7,12 +7,11 @@ class SearchDeOuf extends React.Component {
 	}
 	render () {
 		return (
-			<form className="navbar-form navbar-left" role="search">
-				<div className="form-group">
-					<input onChange={this.onInputChange.bind(this)} type="text" className="form-control" placeholder="Search" />
-				</div>
-				<button onClick={(evt)=> { this.props.onButtonClicked(this.state.searchKeyword); }} className="btn btn-default">Submit</button>
-			</form>
+			
+			<div className="row">
+				<input  onChange={this.onInputChange.bind(this)} type="text" className="col-md-9 col-lg-6 col-lg-offset-2" placeholder="Search" />			
+				<button onClick={(evt)=> { this.props.onButtonClicked(this.state.searchKeyword); }} className="col-md-2 col-lg-2">Submit</button>			
+			</div>
 		);
 	}
 

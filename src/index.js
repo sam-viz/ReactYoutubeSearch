@@ -19,27 +19,22 @@ class App extends React.Component {
   constructor(props) {
   	super(props);
   	this.state = {videos: [] , selectedVideo : null };
-
-  	var that=this;
-  	YASearch({"key": YOUTUBE_API_KEY, "term":"Kygo"}, function(response) {
-  		console.log(response);
-  		that.setState({videos: response, selectedVideo: response[0]});
-  	});
+  	this.handleKeywordPressed("kygo");
 
   }
   render() {
   	return (
-  		<div>
+  		<div className="container-fluid">
       		<SearchDeOuf onButtonClicked={this.handleKeywordPressed.bind(this)}/>
-          <VideoPlayer video= {this.state.selectedVideo} />
+      		<div className="row">
+            <VideoPlayer video= {this.state.selectedVideo} />
       		<VideoFeed videos={this.state.videos} onSelectedVideo={(video) => { this.setState({selectedVideo: video}); }} />
+    		</div>
     	</div>
     	);
   }
 
   handleKeywordPressed(keyword){
-    console.log("Received keyword" );
-    console.log(keyword);
     var that=this;
     YASearch({"key": YOUTUBE_API_KEY, "term":keyword}, function(response) {
       console.log(response);

@@ -12,8 +12,8 @@ const VideoThumbnail = (props) => {
                   </a>
                   </div>
                   <div className="media-body">
-                    <h4 className="media-heading">{props.video.snippet.title}</h4>
-                    <h5>{props.video.snippet.channelTitle} </h5>
+                    <h5 className="media-heading">{props.video.snippet.title}</h5>
+                    <h6>{props.video.snippet.channelTitle} </h6>
                   </div>
                 </div>
               </li>

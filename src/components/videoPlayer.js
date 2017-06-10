@@ -12,7 +12,7 @@ const VideoPlayer = ({video}) => {
 		var id=video.id.videoId;
 		var url= "https://www.youtube.com/embed/"+id;
 		return (
-			<div>
+			<div className="col-lg-6">
 				<div className="embed-responsive embed-responsive-4by3">
 	  				<iframe className="embed-responsive-item" src={url}></iframe>
 				</div>
