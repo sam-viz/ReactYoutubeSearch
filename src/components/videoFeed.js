@@ -8,13 +8,13 @@ const VideoFeed= (props) => {
    	  return <VideoThumbnail onSelectedVideo={props.onSelectedVideo} isLastElement={index===props.videos.length-1 ? true:false} video={element} key={element.etag}/>;
    });
 
-   return ( <div id="listOfVideos" className="col s12 m12 l5 z-depth-3">
-   	<h5>Video list</h5>
-   	<div className="divider"></div>
-   	<ul>
-   	{videoReceivedItems}
-   	</ul>
-   	</div>
+   return (
+   <div className="col s12 m12 l5"> 
+   		<ul id="videoList" className="collection with-header z-depth-2">
+   		    <li id="videoListTitle" className="collection-header"><h5>Video List</h5></li>
+   			{videoReceivedItems}
+   		</ul>
+    </div>
    	);
 
 };
