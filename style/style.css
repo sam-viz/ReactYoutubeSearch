@@ -5,3 +5,16 @@ body {
 #listOfVideos {
 	background-color: #fff;
 }
+
+.searchResultItem {
+    margin-bottom: "0px";
+	padding: 5px;
+
+}
+.searchResultItem:hover {
+    cursor: pointer;
+    background-color: #f5f5f5;
+    margin-bottom: "0px";
+
+
+}
