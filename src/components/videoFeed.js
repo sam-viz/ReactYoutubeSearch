@@ -8,7 +8,7 @@ const VideoFeed= (props) => {
    	  return <VideoThumbnail onSelectedVideo={props.onSelectedVideo} video={element} key={element.etag}/>;
    });
 
-   return (<ul>
+   return (<ul id="listOfVideos" className="col s12 m12 l5">
    	{videoReceivedItems}
    	</ul>);
 

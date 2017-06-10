@@ -12,13 +12,15 @@ const VideoPlayer = ({video}) => {
 		var id=video.id.videoId;
 		var url= "https://www.youtube.com/embed/"+id;
 		return (
-			<div >
-				<div>
+			<div className="col m12 s12 l7">
+				<div className="video-container">
 	  				<iframe src={url}></iframe>
 				</div>
-				<div >
-	           		<h3>{video.snippet.title}</h3>
-	           		<p>{video.snippet.description}</p>
+				<div className="card">
+					<div className="card-content">
+	           			<p><span className="card-title">{video.snippet.title}</span>
+	           			{video.snippet.description}</p>
+	           		</div>
 		      	</div>
       		</div>
 			);

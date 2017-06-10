@@ -24,10 +24,12 @@ class App extends React.Component {
   }
   render() {
   	return (
-  		<div>
+  		<div className="container">
       		<SearchDeOuf onButtonClicked={this.handleKeywordPressed.bind(this)}/>
+          <div className="row">
           <VideoPlayer video= {this.state.selectedVideo} />
       		<VideoFeed videos={this.state.videos} onSelectedVideo={(video) => { this.setState({selectedVideo: video}); }} />
+          </div>
     	</div>
     	);
   }
