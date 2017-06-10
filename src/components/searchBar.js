@@ -9,8 +9,8 @@ class SearchDeOuf extends React.Component {
 		return (
 			
 			<div className="row">
-				<input  onChange={this.onInputChange.bind(this)} type="text" className="col-md-9 col-lg-6 col-lg-offset-2" placeholder="Search" />			
-				<button onClick={(evt)=> { this.props.onButtonClicked(this.state.searchKeyword); }} className="col-md-2 col-lg-2">Submit</button>			
+				<input  onChange={this.onInputChange.bind(this)} type="text"  placeholder="Search" />			
+				<button onClick={(evt)=> { this.props.onButtonClicked(this.state.searchKeyword); }}>Submit</button>			
 			</div>
 		);
 	}
