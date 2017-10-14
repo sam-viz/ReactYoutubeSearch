@@ -36,7 +36,7 @@ class App extends React.Component {
     var that=this;
     YASearch({"key": YOUTUBE_API_KEY, "term":keyword}, function(response) {
       console.log(response);
-      that.setState({videos: response, selectedVideo: response[0]});
+      that.setState({videos: response});
     });
   }
 };
