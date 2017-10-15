@@ -1,10 +1,12 @@
+const webpack = require('webpack');
+
 module.exports = {
+  context: __dirname,
   entry: [
     './src/index.js'
   ],
   output: {
-    path: __dirname,
-    publicPath: '/',
+    path: __dirname+ '/__build__/',
     filename: 'bundle.js'
   },
   module: {
@@ -22,5 +24,12 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './'
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
+  ]
 };
