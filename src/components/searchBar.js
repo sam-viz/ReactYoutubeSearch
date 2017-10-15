@@ -1,5 +1,12 @@
 import React from 'react';
 
+const searchBarStyle= {
+	root : {
+		"padding-left": 10,
+		"padding-right" : 10
+	}
+}
+
 class SearchDeOuf extends React.Component {
 	constructor(props){
 		super(props);
@@ -7,8 +14,8 @@ class SearchDeOuf extends React.Component {
 	}
 	render () {
 		return (			
-			<div className="row ">
-				<div className="card col l6 m6 s6 offset-l3 offset-s3 offset-m3">
+			<div className="row" style={searchBarStyle.root}>
+				<div className="card col l6 m12 s12 offset-l3">
 					<div className="card-content">
 						<input value={this.state.searchKeyword} onChange={this.handleInputChange.bind(this)} type="text"  placeholder="Search" />					
 					</div>
